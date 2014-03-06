@@ -1,0 +1,5 @@
+<h1><%= @user.email %>'s highlights:</h1>
+<% @user.highlights.each do |highlight| %>
+  <%= link_to highlight.title, user_highlight_url(@user, highlight.id) %>
+  <br>
+<% end %>

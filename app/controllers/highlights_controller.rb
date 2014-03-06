@@ -20,7 +20,7 @@ class HighlightsController < ApplicationController
     @highlight = Highlight.new(params[:highlight])
     
     if @highlight.save
-      redirect_to highlight_url(params[:id])
+      redirect_to user_highlight_url(params[:user_id], @highlight)
     else
       flash.now[:errors] = @highlight.errors.full_messages
       render :new

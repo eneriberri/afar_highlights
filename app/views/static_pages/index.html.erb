@@ -1,0 +1,5 @@
+<% if current_user %>
+  <% current_user.highlights.each do |highlight| %>
+    <%= highlight %>
+  <% end %>
+<% end %>
