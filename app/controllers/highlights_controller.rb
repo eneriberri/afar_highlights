@@ -4,7 +4,7 @@ class HighlightsController < ApplicationController
   
   def index
     @highlights = Highlight.all
-    render :show
+    render :index
   end
   
   def show

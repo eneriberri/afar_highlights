@@ -1,0 +1,10 @@
+<h1>All Highlights</h1>
+
+<% @highlights.each do |highlight| %>
+  <strong>Title:</strong>
+  <%= highlight.title %>
+  <br>
+  <strong>Description:</strong>
+  <%= highlight.description %>
+  <p></p>
+<% end %>

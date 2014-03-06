@@ -1,5 +1,10 @@
 <% if current_user %>
-  <% current_user.highlights.each do |highlight| %>
+  <% highlights.each do |highlight| %>
     <%= highlight %>
   <% end %>
+  
+<% else %>
+  <%= link_to "See All Highlights", highlights_url %>
+  <p></p>
+  <%= link_to "Browse a specific user's highlights", users_url %>
 <% end %>
