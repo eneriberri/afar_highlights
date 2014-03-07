@@ -10,6 +10,7 @@
   <label for="description">Description</label><br>
   <input type="text" name="highlight[description]" id="description">
   
+  <input type="hidden" name="highlight[user_id]" value="<%= current_user.id %>">
 
   <p><input type="submit" value="Create Highlight"></p>
 </form>

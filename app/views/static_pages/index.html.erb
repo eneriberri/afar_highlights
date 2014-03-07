@@ -1,8 +1,7 @@
 <% if current_user %>
-  <% highlights.each do |highlight| %>
-    <%= highlight %>
-  <% end %>
-  
+  <%= link_to "See My Highlights", user_url(current_user) %>
+  <p></p>
+  <%= link_to "Create a Highlight", new_user_highlight_url(current_user) %>
 <% else %>
   <%= link_to "See All Highlights", highlights_url %>
   <p></p>
