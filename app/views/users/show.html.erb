@@ -1,5 +1,16 @@
 <h1><%= @user.email %>'s highlights:</h1>
-<% @user.highlights.each do |highlight| %>
-  <%= link_to highlight.title, user_highlight_url(@user, highlight.id) %>
-  <br>
+
+<% if @user.highlights.empty? %>
+  No highlights to show.
+  <% if @user.id == current_user.id %>
+    <p></p>
+    <%= link_to "Create a highlight", new_user_highlight_url(@user) %>
+  <% end%>
+<% else %>
+  <% @user.highlights.each do |highlight| %>
+    <strong>Title: </strong><%= highlight.title %>
+    <br>
+    <strong>Description: </strong><%= highlight.description %>
+    <p></p>
+  <% end %>
 <% end %>

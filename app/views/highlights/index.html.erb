@@ -6,5 +6,12 @@
   <br>
   <strong>Description:</strong>
   <%= highlight.description %>
+  <br>
+  <strong>Created by:</strong>
+  <a href="<%= user_url(highlight.user_id) %>"><%= User.find(highlight.user_id).email %></a>
   <p></p>
 <% end %>
+
+<% if current_user %>
+  <% link_to "Create a highlight", new_user_highlight_url(current_user) %>
+<% end%>

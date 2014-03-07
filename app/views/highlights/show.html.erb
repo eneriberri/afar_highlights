@@ -1,3 +1,10 @@
 Title: <%= @highlight.title %>
-<p></p>
+<br>
 Description: <%= @highlight.description %>
+<p></p>
+
+<% if current_user %>
+  <%= link_to "Create a highlight", new_user_highlight_url(current_user.id) %>
+  <br>
+<% end %>
+<%= link_to "Browse all highlights", highlights_url %>
