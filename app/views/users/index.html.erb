@@ -1,7 +1,12 @@
 <h1>All Users</h1>
-Click on username to browse their highlights.
-<p></p>
-<% @users.each do |user| %>
-  <a href="<%= user_url(user) %>"><%= user.email %></a>
-  <br>
+
+<% if @users.empty? %>
+  Ruh roh. No users have signed up yet.
+<% else %>
+  Click on username to browse their highlights.
+  <p></p>
+  <% @users.each do |user| %>
+    <a href="<%= user_url(user) %>"><%= user.email %></a>
+    <br>
+  <% end %>
 <% end %>

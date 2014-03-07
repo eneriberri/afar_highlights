@@ -1,15 +1,19 @@
 <h1>All Highlights</h1>
 
-<% @highlights.each do |highlight| %>
-  <strong>Title:</strong>
-  <%= highlight.title %>
-  <br>
-  <strong>Description:</strong>
-  <%= highlight.description %>
-  <br>
-  <strong>Created by:</strong>
-  <a href="<%= user_url(highlight.user_id) %>"><%= User.find(highlight.user_id).email %></a>
-  <p></p>
+<% if @highlights.empty? %>
+  Ruh roh. No highlights have been created yet.
+<% else %>
+  <% @highlights.each do |highlight| %>
+    <strong>Title:</strong>
+    <%= highlight.title %>
+    <br>
+    <strong>Description:</strong>
+    <%= highlight.description %>
+    <br>
+    <strong>Created by:</strong>
+    <a href="<%= user_url(highlight.user_id) %>"><%= User.find(highlight.user_id).email %></a>
+    <p></p>
+  <% end %>
 <% end %>
 
 <% if current_user %>
